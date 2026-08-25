@@ -1,6 +1,6 @@
 # darrency.com
 
-Placeholder and future personal profile for Darren Cao, built with Astro and deployed as a Cloudflare Worker with Static Assets.
+Personal profile for Darren Cao, built with Astro and deployed as a Cloudflare Worker with Static Assets.
 
 ## Stack
 
@@ -42,4 +42,4 @@ Pushes to `main` deploy automatically through `.github/workflows/deploy.yml`. Th
 
 ## Content boundaries
 
-The placeholder intentionally excludes private infrastructure details, credentials, customer data, personal phone details, and unfinished portfolio copy.
+The profile describes professional systems at a high level while excluding private infrastructure details, credentials, customer data, and personal phone details.

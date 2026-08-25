@@ -1,26 +1,188 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = "Darren Cao";
-const description = "Personal website of Darren Cao, a software engineer based in Melbourne.";
+const title = "Darren Yue Cao — Software Engineer";
+const description =
+  "Software engineer in Melbourne building dependable AI agents, regulatory intelligence, document platforms and energy systems.";
+
+const selectedSystems = [
+  {
+    name: "RegLink",
+    area: "Regulatory intelligence",
+    summary:
+      "Built regulatory discovery and review workflows, then added evidence-grounded summaries and agent chat that can search initiatives, retrieve source documents and return enriched citations.",
+    metrics: [],
+    technologies: ["TypeScript", "Vue", "NestJS", "LangGraph", "PostgreSQL"],
+  },
+  {
+    name: "Verify",
+    area: "AI-assisted assessment",
+    summary:
+      "Designed two durable asynchronous AI workflows for chat and document assessment, with persisted checkpoints, streamed progress, structured results and fail-closed citation validation for AER determinations.",
+    metrics: [],
+    technologies: ["TypeScript", "Vue", "NestJS", "LangGraph", "PostgreSQL"],
+  },
+  {
+    name: "DocForge",
+    area: "Document and knowledge platform",
+    summary:
+      "Built an idempotent acquire, index and publish pipeline for canonical documents and reusable knowledge bases, with bounded PDF and spreadsheet processing and retained source provenance.",
+    metrics: [
+      { value: "75,000+", label: "documents processed" },
+      { value: "7M+", label: "retrieval chunks" },
+    ],
+    technologies: ["TypeScript", "Python", "PostgreSQL", "S3", "Docling", "Docker"],
+  },
+  {
+    name: "Arcane Scout",
+    area: "Regulatory ingestion",
+    summary:
+      "Contributed to an asynchronous capture and parsing pipeline for Australian energy consultations and publications across 30 publisher agencies, including replay-safe enrichment and canonical document handoff to DocForge.",
+    metrics: [
+      { value: "6,852", label: "consultations / publications" },
+      { value: "30", label: "publisher agencies" },
+    ],
+    technologies: ["Python", "Scrapy", "Playwright", "PostgreSQL"],
+  },
+  {
+    name: "OPA",
+    area: "Energy optimisation and edge control",
+    summary:
+      "Delivered AEMO NEMWEB and market-notice ingestion, alert evaluation and semantic cloud-to-edge command contracts with durable records and mTLS messaging through AWS IoT Core.",
+    metrics: [
+      { value: "5 min", label: "AEMO price cadence" },
+      { value: "16", label: "edge I/O (8 in / 8 out)" },
+    ],
+    technologies: ["TypeScript", "AWS", "IoT Core", "MQTT"],
+  },
+];
 ---
 
 <BaseLayout {title} {description}>
-  <main class="placeholder" id="main-content">
-    <div class="placeholder__content">
-      <p class="eyebrow">darrency.com</p>
-      <h1>Darren Cao</h1>
-      <p class="role">Software engineer · Melbourne, Australia</p>
-      <p class="status">A new personal site is in progress.</p>
-      <nav aria-label="External links">
-        <a href="https://github.com/Darren-cy" rel="me">GitHub <span aria-hidden="true">↗</span></a>
-        <a href="https://agent.darrency.com">Agent artifacts <span aria-hidden="true">↗</span></a>
-      </nav>
+  <main class="profile" id="main-content">
+    <header class="identity">
+      <div>
+        <h1>Darren Yue Cao</h1>
+        <h2 class="identity__role">Software &amp; AI Engineer</h2>
+        <p class="identity__summary">
+          I build dependable AI agents, regulatory intelligence and data platforms for Australian energy.
+        </p>
+
+        <nav class="section-nav" aria-label="Page sections">
+          <a href="#about"><span></span>About</a>
+          <a href="#work"><span></span>Selected work</a>
+          <a href="#experience"><span></span>Experience</a>
+        </nav>
+      </div>
+
+      <div class="identity__footer">
+        <nav class="external-links" aria-label="External links">
+          <a href="mailto:Darren.CY@outlook.com">Email <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/Darren-cy" rel="me">GitHub <span aria-hidden="true">↗</span></a>
+        </nav>
+        <p>Melbourne, Australia</p>
+      </div>
+    </header>
+
+    <div class="profile__content">
+      <section class="profile-section" id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <div class="prose">
+          <p>
+            I’m a software and AI engineer at <strong>Outpost Ventures</strong>, where I work across products for
+            regulatory intelligence, document workflows and energy operations.
+          </p>
+          <p>
+            My work spans system design and hands-on delivery: durable agent execution, backend APIs, data
+            pipelines, retrieval systems and AWS infrastructure. I care most about making complex software explicit,
+            observable and reliable enough to use in real decisions.
+          </p>
+          <p>
+            Before moving into product engineering, I worked with National Electricity Market data and energy
+            forecasting. That domain experience still shapes how I build software today.
+          </p>
+        </div>
+      </section>
+
+      <section class="profile-section" id="work" aria-labelledby="work-heading">
+        <h2 id="work-heading">Selected work</h2>
+        <p class="section-note">
+          Most of my work is private production software. These are brief descriptions of systems I’ve helped design
+          and build.
+        </p>
+
+        <div class="systems">
+          {selectedSystems.map((system) => (
+            <article class="system">
+              <header class="system__heading">
+                <h3>{system.name}</h3>
+                <p>{system.area}</p>
+              </header>
+              <p class="system__summary">{system.summary}</p>
+              {system.metrics.length > 0 && (
+                <dl class="system__metrics">
+                  {system.metrics.map((metric) => (
+                    <div>
+                      <dt>{metric.value}</dt>
+                      <dd>{metric.label}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+              <ul class="technology-list" aria-label={`${system.name} technologies`}>
+                {system.technologies.map((technology) => <li>{technology}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="profile-section" id="experience" aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Experience</h2>
+
+        <div class="experience-list">
+          <article class="experience">
+            <div class="experience__period">2025 — Present</div>
+            <div>
+              <h3>Software Engineer</h3>
+              <p class="experience__company">Outpost Ventures</p>
+              <p>
+                Lead architectural design and deliver product features across AI, regulatory, document and energy
+                systems, from service contracts and migrations through qualification and cloud delivery.
+              </p>
+            </div>
+          </article>
+
+          <article class="experience">
+            <div class="experience__period">2024 — 2025</div>
+            <div>
+              <h3>Junior Data Analyst</h3>
+              <p class="experience__company">ARJ Kaizen</p>
+              <p>
+                Built data models, SQL workflows and Power BI reporting for National Electricity Market generation,
+                demand and price forecasting.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="profile-section profile-section--compact" aria-labelledby="education-heading">
+        <h2 id="education-heading">Education</h2>
+        <div class="education">
+          <div>
+            <h3>Bachelor of Computer Science</h3>
+            <p>Monash University</p>
+          </div>
+          <p>2019 — 2024</p>
+        </div>
+      </section>
+
+      <footer class="page-footer">
+        <p>Contact</p>
+        <a href="mailto:Darren.CY@outlook.com">Darren.CY@outlook.com <span aria-hidden="true">↗</span></a>
+        <small>© {new Date().getFullYear()} Darren Yue Cao</small>
+      </footer>
     </div>
-    <footer>
-      <span>© {new Date().getFullYear()} Darren Cao</span>
-      <span class="signal"><i aria-hidden="true"></i> Site foundation ready</span>
-    </footer>
   </main>
 </BaseLayout>
-

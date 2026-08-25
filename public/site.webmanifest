@@ -4,8 +4,8 @@
   "description": "Software engineer building dependable AI, data and cloud systems.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#e6eceb",
-  "theme_color": "#e6eceb",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "/favicon.svg",
@@ -14,4 +14,3 @@
     }
   ]
 }
-
