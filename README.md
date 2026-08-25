@@ -35,6 +35,11 @@ npm run deploy
 
 The Worker serves the generated `dist` directory. Both `darrency.com` and `www.darrency.com` are attached as custom domains; the Worker redirects `www` to the canonical apex while preserving the path and query string.
 
+Pushes to `main` deploy automatically through `.github/workflows/deploy.yml`. The workflow validates and builds the project before deploying with Wrangler, then checks the apex and `www` redirect in production. It expects:
+
+- the `production` environment secret `CLOUDFLARE_API_TOKEN`
+- the repository variable `CLOUDFLARE_ACCOUNT_ID`
+
 ## Content boundaries
 
 The placeholder intentionally excludes private infrastructure details, credentials, customer data, personal phone details, and unfinished portfolio copy.
