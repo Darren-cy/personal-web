@@ -33,7 +33,7 @@ The validation pipeline generates Cloudflare binding types, checks Astro and Typ
 npm run deploy
 ```
 
-The Worker serves the generated `dist` directory. Production custom-domain routes are added to `wrangler.jsonc` only after a successful `workers.dev` staging deployment and live review.
+The Worker serves the generated `dist` directory. Both `darrency.com` and `www.darrency.com` are attached as custom domains; the Worker redirects `www` to the canonical apex while preserving the path and query string.
 
 ## Content boundaries
 
