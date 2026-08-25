@@ -1,0 +1,32 @@
+{
+  "name": "personal-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "generate:og": "node scripts/generate-og.mjs",
+    "build": "npm run generate:og && astro build",
+    "preview": "astro preview",
+    "check": "astro check && tsc --noEmit",
+    "test": "vitest run",
+    "cf-typegen": "wrangler types",
+    "deploy:dry": "npm run validate && wrangler deploy --dry-run",
+    "deploy": "npm run validate && wrangler deploy",
+    "validate": "npm run cf-typegen && npm run check && npm run test && npm run build"
+  },
+  "engines": {
+    "node": ">=22.22.0 <27"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "3.7.3",
+    "astro": "7.2.6"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "sharp": "0.35.3",
+    "typescript": "6.0.3",
+    "vitest": "4.1.11",
+    "wrangler": "4.125.0"
+  }
+}

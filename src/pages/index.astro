@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Darren Cao";
+const description = "Personal website of Darren Cao, a software engineer based in Melbourne.";
+---
+
+<BaseLayout {title} {description}>
+  <main class="placeholder" id="main-content">
+    <div class="placeholder__content">
+      <p class="eyebrow">darrency.com</p>
+      <h1>Darren Cao</h1>
+      <p class="role">Software engineer · Melbourne, Australia</p>
+      <p class="status">A new personal site is in progress.</p>
+      <nav aria-label="External links">
+        <a href="https://github.com/Darren-cy" rel="me">GitHub <span aria-hidden="true">↗</span></a>
+        <a href="https://agent.darrency.com">Agent artifacts <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+    <footer>
+      <span>© {new Date().getFullYear()} Darren Cao</span>
+      <span class="signal"><i aria-hidden="true"></i> Site foundation ready</span>
+    </footer>
+  </main>
+</BaseLayout>
+

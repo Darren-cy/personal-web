@@ -1,0 +1,17 @@
+{
+  "name": "Darren Yue Cao",
+  "short_name": "Darren Cao",
+  "description": "Software engineer building dependable AI, data and cloud systems.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#e6eceb",
+  "theme_color": "#e6eceb",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
+
